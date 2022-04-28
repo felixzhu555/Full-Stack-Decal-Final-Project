@@ -8,42 +8,52 @@ const backendURL = "http://localhost:4000/";
 function UserGroups() {
 
     const [userGroups, setUserGroups] = useState([]);
-    
+    const [isError, setIsError] = useState(false);
+
     const config = {
         headers: {
             token: localStorage.getItem("token"),
         }
     }
-    
-    axios
-    .get(backendURL + "user/me", config)
-    .then((res) => {
-        setUserGroups(res.data.group);
-        //console.log(res.data.group); // -> ["234897f93n494243"] (correct)
-        //console.log(userGroups);     // -> undefined (??????)
-    })
-    .catch((err) => {
-        console.log(err);
-        return ( <div>error getting user</div> );
-    })
+
+	useEffect(() => {
+        axios
+        .get(backendURL + "user/me", config)
+        .then((res) => {
+            setUserGroups(res.data.group)
+            setUserGroups(['626a26806e8a9d7905e30e67'])
+            console.log(res.data.group)
+            console.log(userGroups)
+            console.log('User Group ')
+        })
+        .catch((err) => {
+            setIsError(true)
+        })
+        return () => {};
+	}, []);
 
     //console.log(userGroups);
-    var groupCards = [];
-    if (userGroups !== []) {
-        userGroups.forEach(id => {
-            groupCards.push(
-                <GroupCard groupID={id} />
-            )
-        });
-    } else {
-        groupCards.push( <div>No groups as of now!</div> )
-    }
-    
+    // var groupCards = [];
+    // if (userGroups !== []) {
+    //     userGroups.forEach(id => {
+    //         groupCards.push(
+    //             <GroupCard groupID={id} />
+    //         )
+    //     });
+    // } else {
+    //     groupCards.push( <div>No groups as of now!</div> )
+    // }
     return (
         <div>
             <Navbar />
             <h1>My Study Groups</h1>
-            {groupCards}
+            {isError || userGroups.length === 0? (
+							<div>No groups as of now!</div>
+					) : (
+              userGroups.map((id) => (
+                <GroupCard groupID={id} />
+              ))
+          )}
         </div>
     )
 
