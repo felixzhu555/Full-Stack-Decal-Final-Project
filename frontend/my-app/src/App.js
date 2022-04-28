@@ -8,6 +8,7 @@ import BrowseGroups from './pages/BrowseGroups';
 import UserGroups from './pages/UserGroups';
 import CreateGroup from './pages/CreateGroup';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import GetClassName from './pages/GetClassName';
 
 function App() {
   return (
@@ -30,9 +31,9 @@ function App() {
           element={<BrowseClasses />} 
         />
         <Route 
-          path="/browse/*" 
-          element={<BrowseGroups className="CS 61A" />} 
-        /> {/* /browse/[classname] <- how to match classname? */}
+          path="/browse/:id" 
+          element={<GetClassName />} 
+        />
         <Route 
           path="/mygroups" 
           element={<UserGroups />} 

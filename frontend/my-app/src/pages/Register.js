@@ -3,6 +3,9 @@ import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 //import { withRouter } from "./WithRouterFix";
 import { useNavigate } from 'react-router-dom';
 
+import axios from "axios";
+const backendURL = "http://localhost:4000/";
+
 function Register() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -11,15 +14,18 @@ function Register() {
     const [password2, setPassword2] = useState("");
     const [allFilled, setAllFilled] = useState(true);
     const [passwordsMatch, setPasswordsMatch] = useState(true);
+    const [uniqueUsername, setUniqueUsername] = useState(true);
 
     const nav = useNavigate();
     
     let failMessage;
     if (allFilled) {
-        if (passwordsMatch) {
+        if (passwordsMatch && uniqueUsername) {
             failMessage = ( <div></div> );
-        } else {
+        } else if (!passwordsMatch) {
             failMessage = ( <div>Passwords do not match. Please try again.</div> );
+        } else if (!uniqueUsername) {
+            failMessage = ( <div>That username is taken. Please try again.</div> );
         }
     } else {
         failMessage = ( <div>Please fill in every field.</div> );
@@ -35,12 +41,28 @@ function Register() {
                 setPasswordsMatch(false);
             } else {
                 setPasswordsMatch(true);
-                nav('/browse');
+                axios.post(backendURL + "user/register", {
+                    firstName: firstName,
+                    lastName: lastName,
+                    username: username,
+                    password: password
+                }).then(
+                    (res) => {
+                        console.log("Registration succeeded for: " + username);
+                        localStorage.setItem("token", res.data.token);
+                        localStorage.setItem("user", username);
+                        nav('/browse');
+                    },
+                    (err) => {
+                        if (err.request.response === "username taken") {
+                            console.log("Registration failed, username taken");
+                            setUniqueUsername(false);
+                        }
+                        console.log(err);
+                    }
+                )
             }
         }
-        
-        // check if username exists in database
-        // if everything good, go to browse classes page
     }
 
     return (

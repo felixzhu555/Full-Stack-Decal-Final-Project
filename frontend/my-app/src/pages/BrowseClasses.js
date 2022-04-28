@@ -32,7 +32,7 @@ function BrowseClasses() {
     return (
         <div>
             <Navbar />
-            <h2>Which class are you studying for?</h2>
+            <h1>Which class are you studying for?</h1>
             {classButtons}
         </div>
         

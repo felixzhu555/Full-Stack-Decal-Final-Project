@@ -3,6 +3,9 @@ import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 //import { withRouter } from "./WithRouterFix";
 import { useNavigate } from "react-router-dom";
 
+import axios from "axios";
+const backendURL = "http://localhost:4000/";
+
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -10,7 +13,6 @@ function Login() {
     const [passwordCorrect, setPasswordCorrect] = useState(true);
 
     const nav = useNavigate();
-
     let failMessage;
     if (!usernameExists) {
         failMessage = ( <div>Username does not exist</div> );
@@ -25,9 +27,31 @@ function Login() {
         //      stay on page
         console.log("trying to log in");
         console.log({username, password});
-        if (username !== "" && password !== "") {
-            nav("/mygroups");
-        }
+        
+        axios.post(backendURL + "user/login", {
+            username:username,
+            password:password,
+        }).then(
+            (res) => {
+                console.log("Logged In!");
+                localStorage.setItem("token", res.data.token);
+                localStorage.setItem("user", username);
+                nav("/mygroups");
+            },
+            (err) => {
+                if(err.request.response === "Username not found."){
+                    console.log("Username not found");
+                    setUsernameExists(false);
+                } else if (err.request.response === "Incorrect password.") {
+                    console.log("Wrong password");
+                    setUsernameExists(true);
+                    setPasswordCorrect(false);
+                }
+            }
+        )
+        // if (username !== "" && password !== "") {
+        //     nav("/mygroups");
+        // }
     }
 
     return (

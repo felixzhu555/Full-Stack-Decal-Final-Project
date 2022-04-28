@@ -1,26 +1,44 @@
 import React from "react";
 import { Nav, NavItem, NavLink } from "reactstrap";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
 
+    const nav = useNavigate();
+
     const logout = () => {
-        console.log('logout');
+        console.log('logout for user ' + localStorage.getItem("user"));
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        nav("/");
+    }
+
+    const goBrowse = () => {
+        nav("/browse");
+    }
+
+    const goMyGroups = () => {
+        nav("/mygroups");
+    }
+
+    const goCreateGroup = () => {
+        nav("/creategroup");
     }
 
     return (
         <div className="navbar">
             <Nav>
                 <NavItem>
-                    <NavLink href="/browse">Classes</NavLink>
+                    <NavLink onClick={goBrowse}>Classes</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/mygroups">My Groups</NavLink>
+                    <NavLink onClick={goMyGroups}>My Groups</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/creategroup">Create Group</NavLink>
+                    <NavLink onClick={goCreateGroup}>Create Group</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/" onClick={logout}>Log Out</NavLink>
+                    <NavLink onClick={logout}>Log Out</NavLink>
                 </NavItem>
             </Nav>
         </div>
