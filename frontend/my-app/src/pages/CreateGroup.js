@@ -53,7 +53,8 @@ function CreateGroup() {
             .then(result => {
                 let id = result.data._id;
                 console.log(id);
-                axios.put(backendURL + "user/add", {
+                axios
+                .put(backendURL + "user/add", {
                     username:localStorage.getItem("user"),
                     group:id
                 }, config)
@@ -64,8 +65,9 @@ function CreateGroup() {
                     console.log(err);
                 })
             })
-            
-            nav("/mygroups")
+            setTimeout(() => {
+                nav("/mygroups")
+            }, 1000)
         }
     }
 
