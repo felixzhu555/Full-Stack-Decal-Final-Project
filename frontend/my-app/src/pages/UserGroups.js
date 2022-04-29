@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar.js";
 import GroupCard from "../components/GroupCard.js";
 
+import '../UserGroups.css';
+
 import axios from "axios";
 const backendURL = "http://localhost:4000/";
 
@@ -46,14 +48,26 @@ function UserGroups() {
     return (
         <div>
             <Navbar />
-            <h1>My Study Groups</h1>
-            {isError || userGroups.length === 0? (
-							<div>No groups as of now!</div>
-					) : (
-              userGroups.map((id) => (
-                <GroupCard groupID={id} />
-              ))
-          )}
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="loginflex">
+                <div class="extremeSpace"></div>
+                <div class="centeredSpace">
+                    <h1>My Study Groups</h1>
+                    {isError || userGroups.length === 0? (
+                                    <div>No groups as of now!</div>
+                            ) : (
+                    userGroups.map((id) => (
+                        <GroupCard groupID={id} />
+                    ))
+                )}
+                </div>
+                <div class="extremeSpace"></div>
+            </div>
         </div>
     )
 

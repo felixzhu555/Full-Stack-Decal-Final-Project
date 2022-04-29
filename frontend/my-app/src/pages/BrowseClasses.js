@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar.js";
 import { Button } from "reactstrap";
+import '../BrowseClasses.css';
 
 const allClasses = [
     'CS 61A',
@@ -32,8 +33,20 @@ function BrowseClasses() {
     return (
         <div>
             <Navbar />
-            <h1>Which class are you studying for?</h1>
-            {classButtons}
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="loginflex">
+            <div class="extremeSpace"></div>
+            <div class="centeredSpace">
+                <h1>Which class are you studying for?</h1>
+                {classButtons}
+            </div>
+            <div class="extremeSpace"></div>
+        </div>
         </div>
         
     )

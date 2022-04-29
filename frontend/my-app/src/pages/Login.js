@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 //import { withRouter } from "./WithRouterFix";
 import { useNavigate } from "react-router-dom";
+import '../Login.css';
 
 import axios from "axios";
 const backendURL = "http://localhost:4000/";
@@ -49,40 +50,80 @@ function Login() {
                 }
             }
         )
-        // if (username !== "" && password !== "") {
-        //     nav("/mygroups");
-        // }
+        if (username !== "" && password !== "") {
+            nav("/mygroups");
+        }
     }
 
     return (
-        <div>
-            <Button href="/">Home</Button>
-            <Form>
-                <FormGroup>
-                    <Label>
-                        Username
-                    </Label>
-                    <Input 
-                        value={username}
-                        onChange={e => setUsername(e.target.value)}
-                        name="username" 
-                        type="text"
-                    />
-                    <Label>
-                        Password
-                    </Label>
-                    <Input 
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
-                        name="password" 
-                        type="password"
-                    />
-                </FormGroup>
-            </Form>
-            {failMessage}
-            <Button onClick={tryLogin} color="success">Log In</Button>
+        <div class="loginpage">
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="loginflex">
+                <div class="extremeSpace"></div>
+                <div class="centeredSpace">
+                    <Button href="/">Home</Button>
+                    <div class="ugly"></div>
+                    <div class="ugly"></div>
+                    <div class="ugly"></div>
+                    <Form>
+                        <FormGroup>
+                            <Label>
+                                Username
+                            </Label>
+                            <Input 
+                                value={username}
+                                onChange={e => setUsername(e.target.value)}
+                                name="username" 
+                                type="text"
+                            />
+                            <Label>
+                                Password
+                            </Label>
+                            <Input 
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                                name="password" 
+                                type="password"
+                            />
+                        </FormGroup>
+                    </Form>
+                    {failMessage}
+                    <Button onClick={tryLogin} color="success">Log In</Button>
+                </div>
+                
+            </div>
         </div>
     )
+
 }
 
 export default Login;

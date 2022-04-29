@@ -19,11 +19,17 @@ function BrowseGroups({ className }) {
 
     return (
         <div>
-            <Navbar />
-            <h1>Study Groups for {className.replace("+", " ")}</h1>
-            <ButtonGroup>
-                {dateButtons}
-            </ButtonGroup>
+            <div class="loginflex">
+                <div class="extremeSpace"></div>
+                <div class="centeredSpace">
+                    <Navbar />
+                    <h1>Study Groups for {className.replace("+", " ")}</h1>
+                    <ButtonGroup>
+                        {dateButtons}
+                    </ButtonGroup>
+                </div>
+                <div class="extremeSpace"></div>
+            </div>
         </div>
     )
 }

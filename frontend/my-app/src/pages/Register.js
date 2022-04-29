@@ -67,68 +67,99 @@ function Register() {
 
     return (
         <div>
-            <Button href="/">Home</Button>
-            <Form>
-                <FormGroup>
-                    <Label>
-                        First Name
-                    </Label>
-                    <Input 
-                        value={firstName}
-                        onChange={e => setFirstName(e.target.value)}
-                        name="firstName"
-                        placeholder="e.g. John"
-                        type="text" 
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Label>
-                        Last Name
-                    </Label>
-                    <Input 
-                        value={lastName}
-                        onChange={e => setLastName(e.target.value)}
-                        name="lastName" 
-                        placeholder="e.g. Smith" 
-                        type="text" 
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Label>
-                        Username
-                    </Label>
-                    <Input 
-                        value={username}
-                        onChange={e => setUsername(e.target.value)}
-                        name="username" 
-                        type="text" 
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Label>
-                        Password
-                    </Label>
-                    <Input 
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
-                        name="password" 
-                        type="password" 
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Label>
-                        Confirm Password
-                    </Label>
-                    <Input 
-                        value={password2}
-                        onChange={e => setPassword2(e.target.value)}
-                        name="password2" 
-                        type="password" 
-                    />
-                </FormGroup>
-            </Form>
-            {failMessage}
-            <Button onClick={tryRegister} color="success">Create New Account</Button>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="loginflex">
+                
+                <div class="extremeSpace"></div>
+                <div class="centeredSpace">
+                    <Button href="/">Home</Button>
+                    <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+                    <Form>
+                        <FormGroup>
+                            <Label>
+                                First Name
+                            </Label>
+                            <Input 
+                                value={firstName}
+                                onChange={e => setFirstName(e.target.value)}
+                                name="firstName"
+                                placeholder="e.g. John"
+                                type="text" 
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>
+                                Last Name
+                            </Label>
+                            <Input 
+                                value={lastName}
+                                onChange={e => setLastName(e.target.value)}
+                                name="lastName" 
+                                placeholder="e.g. Smith" 
+                                type="text" 
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>
+                                Username
+                            </Label>
+                            <Input 
+                                value={username}
+                                onChange={e => setUsername(e.target.value)}
+                                name="username" 
+                                type="text" 
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>
+                                Password
+                            </Label>
+                            <Input 
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                                name="password" 
+                                type="password" 
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>
+                                Confirm Password
+                            </Label>
+                            <Input 
+                                value={password2}
+                                onChange={e => setPassword2(e.target.value)}
+                                name="password2" 
+                                type="password" 
+                            />
+                        </FormGroup>
+                    </Form>
+                    {failMessage}
+                    <Button onClick={tryRegister} color="success">Create New Account</Button>
+                </div>
+                <div class="extremeSpace"></div>
+                </div>
+
         </div>
     )
 }

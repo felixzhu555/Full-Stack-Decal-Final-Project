@@ -1,0 +1,12 @@
+.loginflex {
+    display: flex;
+    flex-direction: horizontal;
+}
+
+.centeredSpace {
+   width: 50%;
+}
+
+.extremeSpace {
+    width: 25%;
+}

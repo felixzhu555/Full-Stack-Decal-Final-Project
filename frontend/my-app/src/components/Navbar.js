@@ -1,6 +1,7 @@
 import React from "react";
 import { Nav, NavItem, NavLink } from "reactstrap";
 import { useNavigate } from "react-router-dom";
+import '../Navbar.css';
 
 function Navbar() {
 

@@ -1,0 +1,61 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.title {
+    text-align: center;
+}
+
+.homeflexbox {
+    display: flex;
+    flex-direction: horizontal;
+}
+
+.homeflexbox.left {
+    width: 50%;
+    display: flex;
+    flex-direction: vertical;
+}
+
+
+.right {
+    width: 50%;
+}
+
+.divider {
+    height: 30%;
+}
+
+
+.buttons {
+    height: 20%;
+    display: flex;
+    flex-direction: horizontal;
+}
+
+.space {
+    width: 35%;
+}
+
+.button1 {
+    width:15%;
+}
+
+.button2 {
+    width:15%; 
+}
+
+/* .description h5 {
+    width: 40%;
+} */
+
+.right img {
+    width: 90%;
+    height: auto;
+}
+
+.ugly {
+    height: 10px;
+}
+
+

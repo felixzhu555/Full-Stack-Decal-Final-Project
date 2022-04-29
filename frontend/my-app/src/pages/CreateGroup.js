@@ -83,80 +83,92 @@ function CreateGroup() {
     return (
         <div>
             <Navbar />
-            <h1>Create your own study group!</h1>
-            <Form>
-                <FormGroup>
-                    <Label>
-                        Class
-                    </Label>
-                    <Input
-                        value={classname}
-                        onChange={e => setClassname(e.target.value)}
-                        name="class"
-                        type="select"
-                    >
-                    {classOptions}
-                    </Input>
-                </FormGroup>
-                <FormGroup>
-                    <Label>
-                        Study Group Title
-                    </Label>
-                    <Input
-                        value={title}
-                        onChange={e => setTitle(e.target.value)}
-                        name="title"
-                        placeholder="e.g. 61A midterm"
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Label>
-                        Location (if virtual, put meeting platform and link below)
-                    </Label>
-                    <Input
-                        value={location}
-                        onChange={e => setLocation(e.target.value)}
-                        name="location"
-                        placeholder="e.g. Soda 270"
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Label>
-                        Date (please pick a day within the next 7 days)
-                    </Label>
-                    <Input
-                        value={date}
-                        onChange={e => setDate(e.target.value)}
-                        name="date"
-                        type="date"
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Label>
-                        Time
-                    </Label>
-                    <Input
-                        value={time}
-                        onChange={e => setTime(e.target.value)}
-                        name="time"
-                        placeholder="e.g. 7-10pm"
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Label>
-                        Description
-                    </Label>
-                    <Input
-                        value={description}
-                        onChange={e => setDescription(e.target.value)}
-                        name="description"
-                        placeholder="What/How will you be studying?"
-                        type="textarea"
-                    />
-                </FormGroup>
-            </Form>
-            {failMessage}
-            <Button onClick={tryCreateGroup} color="success">Create New Study Group</Button>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="ugly"></div>
+            <div class="loginflex">
+            <div class="extremeSpace"></div>
+            <div class="centeredSpace">
+                <h1>Create your own study group!</h1>
+                <Form>
+                    <FormGroup>
+                        <Label>
+                            Class
+                        </Label>
+                        <Input
+                            value={classname}
+                            onChange={e => setClassname(e.target.value)}
+                            name="class"
+                            type="select"
+                        >
+                        {classOptions}
+                        </Input>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>
+                            Study Group Title
+                        </Label>
+                        <Input
+                            value={title}
+                            onChange={e => setTitle(e.target.value)}
+                            name="title"
+                            placeholder="e.g. 61A midterm"
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>
+                            Location (if virtual, put meeting platform and link below)
+                        </Label>
+                        <Input
+                            value={location}
+                            onChange={e => setLocation(e.target.value)}
+                            name="location"
+                            placeholder="e.g. Soda 270"
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>
+                            Date (please pick a day within the next 7 days)
+                        </Label>
+                        <Input
+                            value={date}
+                            onChange={e => setDate(e.target.value)}
+                            name="date"
+                            type="date"
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>
+                            Time
+                        </Label>
+                        <Input
+                            value={time}
+                            onChange={e => setTime(e.target.value)}
+                            name="time"
+                            placeholder="e.g. 7-10pm"
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>
+                            Description
+                        </Label>
+                        <Input
+                            value={description}
+                            onChange={e => setDescription(e.target.value)}
+                            name="description"
+                            placeholder="What/How will you be studying?"
+                            type="textarea"
+                        />
+                    </FormGroup>
+                </Form>
+                {failMessage}
+                <Button onClick={tryCreateGroup} color="success">Create New Study Group</Button>
+            </div>
+            <div class="extremeSpace"></div>
+        </div>
         </div>
         
     )
