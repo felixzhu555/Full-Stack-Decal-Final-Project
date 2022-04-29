@@ -50,21 +50,7 @@ function BrowseGroups({ className }) {
     // const [, updateState] = useState();
     // const forceUpdate = useCallback(() => updateState({}), [])
 
-    return (
-        <div>
-            <div class="loginflex">
-                <div class="extremeSpace"></div>
-                <div class="centeredSpace">
-                    <Navbar />
-                    <h1>Study Groups for {className.replace("+", " ")}</h1>
-                    <ButtonGroup>
-                        {dateButtons}
-                    </ButtonGroup>
-                </div>
-                <div class="extremeSpace"></div>
-            </div>
-        </div>
-    )
+    
     useEffect(() => {
         const getGroups = async () => {
             console.log(selectedDate + " " + className);
@@ -104,12 +90,17 @@ function BrowseGroups({ className }) {
         //console.log(groupCards);
         return (
             <div>
-                <Navbar />
-                <h1>Study Groups for {className}</h1>
-                <ButtonGroup>
-                    {dateButtons}
-                </ButtonGroup>
-                { gc }
+                <div class="loginflex">
+                    <div class="extremeSpace"></div>
+                    <div class="centeredSpace">
+                        <Navbar />
+                        <h1>Study Groups for {className.replace("+", " ")}</h1>
+                        <ButtonGroup>
+                            {dateButtons}
+                        </ButtonGroup>
+                    </div>
+                    <div class="extremeSpace"></div>
+                </div>
             </div>
         )
     } else {
