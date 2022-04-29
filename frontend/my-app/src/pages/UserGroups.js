@@ -23,10 +23,10 @@ function UserGroups() {
         .get(backendURL + "user/me", config)
         .then((res) => {
             setUserGroups(res.data.group)
-            setUserGroups(['626a26806e8a9d7905e30e67'])
-            console.log(res.data.group)
-            console.log(userGroups)
-            console.log('User Group ')
+            // setUserGroups(['626a26806e8a9d7905e30e67'])
+            // console.log(res.data.group)
+            // console.log(userGroups)
+            // console.log('User Group ')
         })
         .catch((err) => {
             setIsError(true)
